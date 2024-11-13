@@ -2,17 +2,38 @@ import "./App.css";
 import Tasks from "./Tasks";
 
 function App() {
-  const Tasksnames = [
-    "Learn PHP",
-    "Learn Javascript",
-    "Learn React",
-    "Learn Redux",
-    "Prepare for Interview",
+  const title = "List of Tasks for the month of November 2024";
+  const tasks = [
+    {
+      title: "Learn Javascript",
+      description:
+        "Learn how to use JavaScript — a powerful and flexible programming language for adding website interactivity.",
+    },
+    {
+      title: "Learn Typescript",
+      description:
+        "Learn to supercharge your web-applications with the powerful typed language from Microsoft!",
+    },
+    {
+      title: "Learn React",
+      description:
+        "Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis.",
+    },
+    {
+      title: "Learn Python",
+      description:
+        "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",
+    },
+    {
+      title: "Learn HTML",
+      description:
+        "In this HTML tutorial, you will find more than 200 examples. With our online 'Try it Yourself' editor, you can edit and test each example yourself",
+    },
   ];
 
   return (
     <div>
-      <Tasks mytasks={Tasksnames} />
+      <Tasks title={title} tasks={tasks} />
     </div>
   );
 }
