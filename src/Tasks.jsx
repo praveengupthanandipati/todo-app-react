@@ -7,12 +7,22 @@ const Tasks = (props) => {
     <div className="w-[1000px] mx-auto m-5">
       <h1 className="text-center text-2xl">{title}</h1>
 
-      {props.tasks.map((task) => (
+      {tasks.map((task) => (
         <div className="taskListItem my-4 bg-white border shadow-md p-4 rounded-md">
-          <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5
+            class={`text-xl font-bold tracking-tight text-gray-900 dark:text-white ${
+              task.title.iscompleted ? "font-semibold" : "line-through"
+            }`}
+          >
             {task.title}
           </h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400 pb-4">
+          <p
+            class={`font-normal text-gray-700 dark:text-gray-400 pb-4 ${
+              task.description.isCompleted
+                ? "font-semibold"
+                : "line-through text-gray-400"
+            }`}
+          >
             {task.description}
           </p>
           <p
@@ -26,7 +36,7 @@ const Tasks = (props) => {
             href="#"
             class="inline-flex font-medium items-center text-blue-600 hover:underline"
           >
-            Delete
+            Update
           </a>
         </div>
       ))}
