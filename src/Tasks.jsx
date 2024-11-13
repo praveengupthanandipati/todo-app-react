@@ -15,6 +15,13 @@ const Tasks = (props) => {
           <p class="font-normal text-gray-700 dark:text-gray-400 pb-4">
             {task.description}
           </p>
+          <p
+            className={`font-semibold ${
+              task.isCompleted ? "text-green-800" : "text-red-500"
+            }`}
+          >
+            Status: {task.isCompleted ? "Completed" : "Pending"}
+          </p>
           <a
             href="#"
             class="inline-flex font-medium items-center text-blue-600 hover:underline"
@@ -23,6 +30,9 @@ const Tasks = (props) => {
           </a>
         </div>
       ))}
+      <button className="p-3 bg-blue-900 w-full text-white rounded">
+        New Task
+      </button>
     </div>
   );
 };
